@@ -1,5 +1,5 @@
 // Nisanth's Code
-package ElderBloody;
+/*package ElderBloody;
 
 import java.util.Scanner;
 
@@ -57,16 +57,20 @@ public class Main {
 		
 	}
 	
-}
+}*/
 
 // Muhib's Code
-/*package ElderBloody;
+package ElderBloody;
 
 import java.util.Scanner;
 
 public class Main {
+	
+	static Room[] booleansRoom = new Room[16];
+	
 	public static void main(String[] args) {
 		Title.printAbsPath();
+		initializeRooms();
 		startGame();
 	}
 
@@ -84,12 +88,11 @@ public class Main {
 	}
 
 	public static void firstRoom() {
-		Room booleansFirstRoom = new Room(1, false, true, false, false); // North, East, South, West
-		booleansFirstRoom.drawRoom();
+		booleansRoom[14].drawRoom();
 		Scanner scanner = new Scanner(System.in);
 		String askInput;
-		System.out.println(
-				"Welcome to the first room! Write 'Right' to move through the exit on the right. Later on in the game, you write 'Left', 'Right', 'Up', 'Down', to move through exits of your choice.");
+		System.out.println("Welcome to the first room! Write 'Right' to move through the exit on the right.");
+		System.out.println("Later on in the game, you write 'Left', 'Right', 'Up', 'Down', to move through exits of your choice.");
 		askInput = scanner.nextLine();
 		if (askInput.matches("Right")) {
 			secondRoom();
@@ -100,8 +103,7 @@ public class Main {
 	}
 
 	public static void secondRoom() {
-		Room booleansSecondRoom = new Room(2, true, false, false, true); // North, East, South, West
-		booleansSecondRoom.drawRoom();
+		booleansRoom[5].drawRoom();
 		Scanner scanner = new Scanner(System.in);
 		String askInput;
 		System.out.println(
@@ -119,7 +121,25 @@ public class Main {
 	}
 	
 	public static void thirdRoom() {
-		Room booleansThirdRoom = new Room(3, true, true, true, false); // North, East, South, West
-		booleansThirdRoom.drawRoom();
+		booleansRoom[4].drawRoom();
 	}
-}*/
+	
+	public static void initializeRooms() {
+		booleansRoom[0] = new Room(1, true, true, true, true);
+		booleansRoom[1] = new Room(2, false, true, true, true);
+		booleansRoom[2] = new Room(3, true, false, true, true);
+		booleansRoom[3] = new Room(4, true, true, false, true);
+		booleansRoom[4] = new Room(5, true, true, true, false);
+		booleansRoom[5] = new Room(6, true, false, false, true);
+		booleansRoom[6] = new Room(7, true, true, false, false);
+		booleansRoom[7] = new Room(8, false, true, true, false);
+		booleansRoom[8] = new Room(9, false, false, true, true);
+		booleansRoom[9] = new Room(10, false, true, false, true);
+		booleansRoom[10] = new Room(11, true, false, true, false);
+		booleansRoom[11] = new Room(12, true, false, false, false);
+		booleansRoom[12] = new Room(13, false, false, true, false);
+		booleansRoom[13] = new Room(14, false, false, false, true);
+		booleansRoom[14] = new Room(15, false, true, false, false);
+		booleansRoom[15] = new Room(16, false, false, false, false);
+	}
+}
