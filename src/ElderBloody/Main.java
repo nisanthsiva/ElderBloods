@@ -10,23 +10,25 @@ public class Main {
 	private static int currentRoom = 0;
 	private static int gamestate = 0;
 	
-	private static Room testRoom = new Room(100, false, false, false, false);
+	private static Room testRoom = new Room(0, -1, 1, 4, -1); // Top-Left most room
 	
-	private static Room[][] map = {
-			{new Room(1, true, false, true, true), new Room(2, true, true, false, true), new Room(3, true, false, true, false)},
-			{new Room(4, true, false, false, true), new Room(5, true, false, true, false), new Room(6, false, true, true, true)},
-			{new Room(7, true, false, false, false), new Room(8, true, true, true, true), new Room(9, false, false, true, true)}
-		};
+//	private static Room[][] map = {
+//			{},
+//			{},
+//			{}
+//		};
 
 	public static void main(String[] args) {
 		Title.printAbsPath();
 		
-		map[currentRow][currentRoom].drawRoom();
+		testRoom.drawRoom();
+		
+//		map[currentRow][currentRoom].drawRoom();
 				
 		
-		while(gamestate == 0) {
-			takePlayerInput();
-		}
+//		while(gamestate == 0) {
+//			takePlayerInput();
+//		}
 	}
 	
 	public static void takePlayerInput() {		
@@ -49,8 +51,8 @@ public class Main {
 			return;
 		}
 		
-		map[currentRow][currentRoom].drawRoom();
-		System.out.println(map[currentRow][currentRoom].getRoomNumber());
+//		map[currentRow][currentRoom].drawRoom();
+//		System.out.println(map[currentRow][currentRoom].getRoomNumber());
 		
 	}
 	

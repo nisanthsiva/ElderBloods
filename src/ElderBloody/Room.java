@@ -3,20 +3,25 @@ package ElderBloody;
 public class Room {
 
 	private int roomNumber;
-	private boolean exitNorth; 
-	private boolean exitEast;
-	private boolean exitSouth;
-	private boolean exitWest;
-		
-	public Room(int roomNumber, boolean exitNorth, boolean exitEast, boolean exitSouth, boolean exitWest) {
+	private int roomNorth;
+	private int roomEast;
+	private int roomSouth;
+	private int roomWest;
+	
+	public Room(int roomNumber, int roomNorth, int roomEast, int roomSouth, int roomWest) {
 		this.roomNumber = roomNumber;
-		this.exitNorth = exitNorth;
-		this.exitEast = exitEast;
-		this.exitSouth = exitSouth;
-		this.exitWest = exitWest;
+		this.roomNorth = roomNorth;
+		this.roomEast = roomEast;
+		this.roomSouth = roomSouth;
+		this.roomWest = roomWest;
 	}
 	
 	public void drawRoom() {
+		boolean exitNorth = this.roomNorth >= 0;
+		boolean exitEast = this.roomEast >= 0;
+		boolean exitSouth = this.roomSouth >= 0;
+		boolean exitWest = this.roomWest >= 0;
+		
 		if(exitNorth && exitEast && exitSouth && exitWest) {
 	    //if(ID == 0) {
 			System.out.println("      |    |      ");
