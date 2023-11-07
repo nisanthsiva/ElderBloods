@@ -20,17 +20,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		Title.printAbsPath();
-		//Room booleansFirstRoom = new Room(1, true, false, true, true); // North, East, South, West
-		//booleansFirstRoom.drawRoom();
 		
-		//map[currentRow][currentRoom].drawRoom();
+		map[currentRow][currentRoom].drawRoom();
+				
 		
-		testRoom.drawRoom();
-		
-		
-//		while(gamestate == 0) {
-//			takePlayerInput();
-//		}
+		while(gamestate == 0) {
+			takePlayerInput();
+		}
 	}
 	
 	public static void takePlayerInput() {		
