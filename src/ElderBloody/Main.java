@@ -122,6 +122,7 @@ public class Main {
 	
 	public static void thirdRoom() {
 		booleansRoom[4].drawRoom();
+		// Will continue.
 	}
 	
 	public static void initializeRooms() {
