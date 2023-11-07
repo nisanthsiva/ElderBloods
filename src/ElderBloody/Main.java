@@ -1,6 +1,5 @@
 package ElderBloody;
 
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -10,6 +9,8 @@ public class Main {
 	private static int currentRow = 0;
 	private static int currentRoom = 0;
 	private static int gamestate = 0;
+	
+	private static Room testRoom = new Room(100, false, false, false, false);
 	
 	private static Room[][] map = {
 			{new Room(1, true, false, true, true), new Room(2, true, true, false, true), new Room(3, true, false, true, false)},
@@ -22,12 +23,14 @@ public class Main {
 		//Room booleansFirstRoom = new Room(1, true, false, true, true); // North, East, South, West
 		//booleansFirstRoom.drawRoom();
 		
-		map[currentRow][currentRoom].drawRoom();
+		//map[currentRow][currentRoom].drawRoom();
+		
+		testRoom.drawRoom();
 		
 		
-		while(gamestate == 0) {
-			takePlayerInput();
-		}
+//		while(gamestate == 0) {
+//			takePlayerInput();
+//		}
 	}
 	
 	public static void takePlayerInput() {		

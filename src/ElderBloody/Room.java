@@ -186,11 +186,11 @@ public class Room {
 			System.out.println("                  ");
 			System.out.println("                  ");
 		}
-		else if(!exitNorth && exitEast && !exitSouth && !exitWest) {
+		else if(!exitNorth && !exitEast && !exitSouth && !exitWest) {
 			System.out.println(" ________________ ");
-			System.out.println("|       	   	 |");
 			System.out.println("|                |");
-			System.out.println("|       	     |");
+			System.out.println("|                |");
+			System.out.println("|                |");
 			System.out.println("|                |");
 			System.out.println("|   	         |");
 			System.out.println("|                |");
