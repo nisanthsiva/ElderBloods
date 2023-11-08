@@ -1,5 +1,5 @@
-// Nisanth's Code
-/*package ElderBloody;
+// Nisanth's code:
+package ElderBloody;
 
 public class Room {
 
@@ -15,6 +15,24 @@ public class Room {
 		this.roomEast = roomEast;
 		this.roomSouth = roomSouth;
 		this.roomWest = roomWest;
+	}
+	
+	public static void moveRoom(String playerInput) {
+		if(playerInput.equals("N")) {
+//			return map[currentRoom].roomNorth;
+		}
+		else if(playerInput.equals("E")) {
+			// move east
+		}
+		else if(playerInput.equals("S")) {
+			// move south
+		}
+		else if(playerInput.equals("W")) {
+			// move west
+		}
+		else {
+			// invalid input
+		}
 	}
 	
 	public void drawRoom() {
@@ -208,7 +226,8 @@ public class Room {
 		return roomNumber;
 	}
 	
-}*/
+}
+
 // Muhib's Code
 package ElderBloody;
 
