@@ -1,5 +1,5 @@
 // Nisanth's Code
-/*package ElderBloody;
+package ElderBloody;
 
 import java.util.Scanner;
 
@@ -7,23 +7,20 @@ public class Main {
 	
 	private static Scanner scanner = new Scanner(System.in);
 	
-	private static int currentRow = 0;
 	private static int currentRoom = 0;
 	private static int gamestate = 0;
 	
-	private static Room testRoom = new Room(0, -1, 1, 4, -1); // Top-Left most room
 	
-//	private static Room[][] map = {
-//			{},
-//			{},
-//			{}
-//		};
+	public static Room[] map = { // id, n, e, s, w
+			new Room(0, 0, 1, 3, 0), new Room(1, 1, 2, 4, 0), new Room(2, 2, 3, 5, 1),
+			new Room(3, 0, 4, 6, 3), new Room(4, 1, 5, 7, 3), new Room(5, 2, 5, 8, 4),
+			new Room(6, 3, 7, 6, 6), new Room(7, 4, 8, 7, 6), new Room(8, 5, 8, 8, 7)
+		};
 
 	public static void main(String[] args) {
 		Title.printAbsPath();
 		
-		testRoom.drawRoom();
-		
+		map[currentRoom].drawRoom();
 //		map[currentRow][currentRoom].drawRoom();
 				
 		
@@ -35,29 +32,13 @@ public class Main {
 	public static void takePlayerInput() {		
 		System.out.println("Enter: W, A, S, D");
 		String playerInput = scanner.nextLine();
-		if(playerInput.equals("W") && currentRow > 0) { // UP
-			currentRow--;
-		}
-		else if(playerInput.equals("S") && currentRow < 3) { // DOWN
-			currentRow++;
-		}
-		else if(playerInput.equals("A") && currentRoom > 0) { // LEFT
-			currentRoom--;
-		}
-		else if(playerInput.equals("D") && currentRoom < 3) { // RIGHT
-			currentRoom++;
-		}
-		else {
-			System.out.println("Invalid number, please enter a valid number");
-			return;
-		}
 		
 //		map[currentRow][currentRoom].drawRoom();
 //		System.out.println(map[currentRow][currentRoom].getRoomNumber());
 		
 	}
 	
-}*/
+}
 
 // Muhib's Code
 package ElderBloody;
