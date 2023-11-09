@@ -42,7 +42,7 @@ public class Main {
 }
 
 // Muhib's Code
-package ElderBloody;
+/*package ElderBloody;
 
 import java.util.Scanner;
 
@@ -125,4 +125,4 @@ public class Main {
 		booleansRoom[14] = new Room(15, false, true, false, false);
 		booleansRoom[15] = new Room(16, false, false, false, false);
 	}
-}
+}*/
