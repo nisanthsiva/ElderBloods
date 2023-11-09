@@ -12,9 +12,10 @@ public class Main {
 	
 	
 	private static Room[] map = {
-			new Room(1, 1, 2, 11, 1), new Room(2, 2, 3, 12, 1), new Room(3, 3, 4, 13, 2), new Room(4, 4, 5, 4, 3), new Room(5, 5, 6, 15, 4), new Room(6, 6, 6, 16, 5), new Room(7, 7, 8, 17, 7), new Room(8, 8, 9, 8, 7), new Room(9, 9, 10, 19, 8), new Room(10, 10, 10, 20, 9),
-			new Room(11, 1, 12, 21, 11), new Room(12, 2, 13, 22, 11), new Room(13, 3, 14, 13, 12), new Room(14, 14, 15, 24, 13), new Room(15, 5, 15, 25, 15), new Room(16, 6, 17, 16, 16), new Room(17, 7, 17, 17, 16), new Room(18, 18, 19, 28, 18), new Room(19, 9, 19, 19, 18), new Room(20, 10, 20, 30, 20),
-			new Room(21, 11, 21, 31, 21), new Room(22, 12, 22, 32, 22), new Room(23, 23, 24, 33, 23), new Room(24, 14, 25, 34, 23), new Room(25, 15, 26, 35, 24), new Room(26, 26, 27, 26, 25), new Room(27, 27, 28, 37, 26), new Room(28, 18, 29, 38, 27), new Room(29, 29, 30, 29, 28), new Room(30, 20, 30, 40, 29),
+			new Room(0, 0, 1, 10, 0), new Room(1, 1, 2, 11, 0), new Room(2, 2, 3, 12, 1), new Room(3, 3, 4, 3, 2), new Room(4, 4, 5, 14, 3), new Room(5, 5, 5, 15, 4), new Room(6, 6, 7, 16, 6), new Room(7, 7, 8, 7, 6), new Room(8, 8, 9, 18, 7), new Room(9, 9, 9, 19, 8), //
+			new Room(10, 0, 11, 20, 10), new Room(11, 1, 12, 21, 10), new Room(12, 2, 13, 12, 11), new Room(13, 13, 14, 23, 12), new Room(14, 4, 14, 24, 14), new Room(15, 5, 16, 15, 15), new Room(16, 6, 16, 16, 15), new Room(17, 17, 18, 27, 17), new Room(18, 8, 18, 18, 17), new Room(19, 9, 19, 29, 19), 
+			new Room(20, 10, 20, 30, 20), new Room(21, 11, 21, 31, 21), new Room(22, 22, 23, 32, 22), new Room(23, 13, 24, 33, 22), new Room(24, 14, 25, 34, 23), new Room(25, 25, 26, 25, 24), new Room(26, 26, 27, 36, 25), new Room(27, 17, 28, 37, 26), new Room(28, 28, 29, 28, 27), new Room(29, 19, 29, 39, 29),
+			new Room(30, 20, 31, 40, 30), new Room(31, 21, 32, 41, 30), new Room(32, 22, 33, 32, 31), new Room(33, 23, 33, 33, 32), new Room(34, 24, 34, 44, 34), new Room(35, 35, 36, 45, 35), new Room(36, 26, 36, 36, 35), new Room(37, 27, 37, 47, 36), new Room(38, 38, 39, 48, 38), new Room(39, 29, 39, 49, 38),
 	};
 
 	public static void main(String[] args) {
