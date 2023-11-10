@@ -1,4 +1,3 @@
-// Nisanth's code:
 package ElderBloody;
 
 public class Room {
@@ -15,24 +14,6 @@ public class Room {
 		this.roomEast = roomEast;
 		this.roomSouth = roomSouth;
 		this.roomWest = roomWest;
-	}
-	
-	public static void moveRoom(String playerInput) {
-		if(playerInput.equals("N")) {
-//			return map[currentRoom].roomNorth;
-		}
-		else if(playerInput.equals("E")) {
-			// move east
-		}
-		else if(playerInput.equals("S")) {
-			// move south
-		}
-		else if(playerInput.equals("W")) {
-			// move west
-		}
-		else {
-			// invalid input
-		}
 	}
 	
 	public void drawRoom() {
@@ -224,6 +205,22 @@ public class Room {
 	
 	public int getRoomNumber() {
 		return roomNumber;
+	}
+	
+	public int getRoomNorth() {
+		return roomNorth;
+	}
+	
+	public int getRoomEast() {
+		return roomEast;
+	}
+	
+	public int getRoomSouth() {
+		return roomSouth;
+	}
+	
+	public int getRoomWest() {
+		return roomWest;
 	}
 	
 }
