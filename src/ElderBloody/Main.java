@@ -55,3 +55,39 @@ public class Main {
 		}
 	}
 }
+/* Muhib's Player Input Code:
+
+public static int newRoom;
+
+public static void main(String[] args) {
+		Title.printAbsPath();
+		
+		map[currentRoom].drawRoom();
+		takePlayerInput();
+	}
+	
+	public static void takePlayerInput() {		
+		System.out.println("Enter: N, E, S, W");
+		String playerInput = scanner.nextLine();
+		if(playerInput.equals("N")) {
+			newRoom = map[currentRoom].getRoomNorth();
+			map[newRoom].drawRoom();
+			currentRoom = newRoom;
+			takePlayerInput();
+		} else if (playerInput.equals("E")) {
+			newRoom = map[currentRoom].getRoomEast();
+			map[newRoom].drawRoom();
+			currentRoom = newRoom;
+			takePlayerInput();
+		} else if (playerInput.equals("S")) {
+			newRoom = map[currentRoom].getRoomSouth();
+			map[newRoom].drawRoom();
+			currentRoom = newRoom;
+			takePlayerInput();
+		} else if (playerInput.equals("W")) {
+			newRoom = map[currentRoom].getRoomWest();
+			map[newRoom].drawRoom();
+			currentRoom = newRoom;
+			takePlayerInput();
+		}
+	} */
