@@ -65,7 +65,7 @@ public class Story {
 		} else if(Main.getCurrentRoom() == 26) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 27) {
-			System.out.println("");
+			System.out.println("Congratulations! You beat the mob! Keep moving forward to adventure through the game.");
 		} else if(Main.getCurrentRoom() == 28) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 29) {
@@ -85,7 +85,7 @@ public class Story {
 		} else if(Main.getCurrentRoom() == 36) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 37) {
-			System.out.println("");
+			System.out.println("You hear the boss nearby. If you are ready, then move forward, otherwise you can go back.");
 		} else if(Main.getCurrentRoom() == 38) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 39) {
@@ -103,9 +103,9 @@ public class Story {
 		} else if(Main.getCurrentRoom() == 45) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 46) {
-			System.out.println("");
+			System.out.println("You are just about to enter the boss room! If you are ready, proceed, otherwise, turn back. Once in the boss room, you cannot leave.");
 		} else if(Main.getCurrentRoom() == 47) {
-			System.out.println("");
+			System.out.println("You found some healing items! This may help later when fighting.");
 		} else if(Main.getCurrentRoom() == 48) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 49) {
@@ -123,7 +123,7 @@ public class Story {
 		} else if(Main.getCurrentRoom() == 55) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 56) {
-			System.out.println("");
+			System.out.println("Welcome to the boss room! Use all the items that you've received to fight the boss. There is no leaving rooms anymore.");
 		} else if(Main.getCurrentRoom() == 57) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 58) {
@@ -212,6 +212,7 @@ public class Story {
 			System.out.println("");
 		} 
 	}
-	
+	/* Route 1: 0, 1, 2, 3, 4, 5, 15, 
+	 * 16, 6, 7, 8, 18, 17, 27, 37, 47, 46, 56 */
 }
 
