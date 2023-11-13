@@ -4,7 +4,7 @@ public class Story {
 	
 	void introduction() {
 		System.out.println("Welcome to the first room! Write 'E' to move through the exit on the right.");
-		System.out.println("Later on in the game, you write 'N', 'E', 'S', 'W', to move through exits of your choice.");
+		System.out.println("Later on in the game, you write 'W', 'A', 'S', 'D', to move through exits of your choice.");
 	}
 	
 	void storyline() {

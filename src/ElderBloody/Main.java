@@ -26,7 +26,7 @@ public class Main {
 	static Story story = new Story();
 
 	public static void main(String[] args) {
-		Title.printAbsPath();
+		Title.printTitle();
 		map[currentRoom].drawRoom();
 		story.introduction();
 		while(gameState == 0) {
@@ -35,7 +35,7 @@ public class Main {
 	}
 	
 	public static void takePlayerInput() {	
-		System.out.println("Enter: N, E, S, W");
+		System.out.println("Enter: W, A, S, D");
 		String playerInput = scanner.nextLine();
 		moveRoom(playerInput);
 		
@@ -45,16 +45,16 @@ public class Main {
 	}
 	
 	public static void moveRoom(String playerInput) {
-		if(playerInput.equals("N")) {
+		if(playerInput.equals("W")) {
 			currentRoom = map[currentRoom].getRoomNorth();
 		}
-		else if(playerInput.equals("E")) {
+		else if(playerInput.equals("D")) {
 			currentRoom = map[currentRoom].getRoomEast();
 		}
 		else if(playerInput.equals("S")) {
 			currentRoom = map[currentRoom].getRoomSouth();
 		}
-		else if(playerInput.equals("W")) {
+		else if(playerInput.equals("A")) {
 			currentRoom = map[currentRoom].getRoomWest();
 		}
 		else {
