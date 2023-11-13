@@ -1,17 +1,15 @@
 package ElderBloody;
-import java.io.File;
-import java.nio.file.Files;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-	public class Title {
-		static File asciiArt = new File("src\\ElderBloody\\AsciiArt.txt");
-		final static String ANSI_PURPLE = "\u001B[45m";
-		//String textString = Files.readString(src\ElderBloody\AsciiArt.txt);
-		
-		public static void printAbsPath() {
-			System.out.println(asciiArt.getPath());
+public class Title{
+	public static void printTitle() throws IOException{
+		final BufferedReader bob = new BufferedReader(new FileReader("D:\\eclipseworkspace\\ElderBloods\\src\\ElderBloody"));
+		final String purpleBg = "\\u001B[45m";
+		String titleText;
+		while((titleText = bob.readLine()) != null) {
+			System.out.println(titleText);
 		}
-		
-		public static void printString() {
-		}
-		
 	}
+}

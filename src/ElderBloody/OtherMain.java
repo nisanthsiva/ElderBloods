@@ -1,4 +1,4 @@
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
         // Creating a Warrior character
         Warrior warrior = new Warrior("Aldric", 150, 25);
@@ -25,3 +25,4 @@ public class Main {
         System.out.println("Current Health: " + warrior.getHealth());
     }
 }
+*/
