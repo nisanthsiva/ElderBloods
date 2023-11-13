@@ -3,13 +3,13 @@ package ElderBloody;
 public class Story {
 	
 	void introduction() {
-		System.out.println("Welcome to the first room! Write 'E' to move through the exit on the right.");
+		System.out.println("Welcome to the first room! Write 'D' to move through the exit on the right.");
 		System.out.println("Later on in the game, you write 'W', 'A', 'S', 'D', to move through exits of your choice.");
 	}
 	
 	void storyline() {
 		if(Main.getCurrentRoom() == 0) {
-			System.out.println("Start the game by writing 'E'.");
+			System.out.println("Start the game by writing 'D'.");
 		} else if(Main.getCurrentRoom() == 1) {
 			System.out.println("As you move on, you'll find other exits that move to other rooms.");
 			System.out.println("Your goal is to find the boss room. You can train to find the boss by searching other rooms for materials or training.");
@@ -214,3 +214,4 @@ public class Story {
 	}
 	
 }
+
