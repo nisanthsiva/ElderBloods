@@ -1,3 +1,5 @@
+package ElderBloody; 
+
 public class Boss extends Enemy {
     private int specialAttackDamage;
 

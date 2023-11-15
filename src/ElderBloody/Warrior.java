@@ -1,3 +1,5 @@
+package ElderBloody; 
+
 public class Warrior extends Player {
     private int maxHealth;
 
