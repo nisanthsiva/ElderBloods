@@ -18,9 +18,9 @@ public class Main {
 			new Room(40, 30, 41, 50, 40), new Room(41, 31, 42, 41, 40), new Room(42, 42, 42, 52, 41), new Room(43, 43, 44, 53, 43), new Room(44, 34, 44, 44, 43), new Room(45, 35, 45, 55, 45), new Room(46, 46, 47, 56, 46), new Room(47, 37, 47, 47, 46), new Room(48, 38, 48, 58, 48), new Room(49, 39, 49, 59, 49),
 			new Room(50, 40, 50, 60, 50), new Room(51, 51, 52, 61, 51), new Room(52, 42, 53, 52, 51), new Room(53, 43, 53, 63, 52), new Room(54, 54, 55, 64, 54), new Room(55, 45, 56, 55, 54), new Room(56, 56, 56, 56, 56), new Room(57, 57, 58, 57 ,56), new Room(58, 48, 59, 68, 57), new Room(59, 49, 59, 69, 58),
 			new Room(60, 50, 60, 70, 60), new Room(61, 51, 61, 71, 61), new Room(62, 62, 63, 72, 62), new Room(63, 53, 63, 63, 62), new Room(64, 54, 64, 74, 64), new Room(65, 65, 66, 75, 65), new Room(66, 56, 67, 76, 65), new Room(67, 67, 68, 77, 66), new Room(68, 58, 68, 68, 67), new Room(69, 59, 69, 79, 69),
-			new Room(70, 60, 71, 80, 70), new Room(71, 61, 72, 81, 70), new Room(72, 62, 73, 72, 71), new Room(73, 73, 74, 73, 72), new Room(74, 64, 75, 84, 73), new Room(75, 65, 76, 85, 74), new Room(76, 66, 76, 86, 75), new Room(77, 67, 78, 87, 77), new Room(78, 78, 78, 88, 77), new Room(79, 69, 79, 89, 79),
+			new Room(70, 60, 71, 80, 70), new Room(71, 61, 72, 71, 70), new Room(72, 62, 73, 72, 71), new Room(73, 73, 74, 73, 72), new Room(74, 64, 75, 84, 73), new Room(75, 65, 76, 85, 74), new Room(76, 66, 76, 86, 75), new Room(77, 67, 78, 87, 77), new Room(78, 78, 78, 88, 77), new Room(79, 69, 79, 89, 79),
 			new Room(80, 70, 81, 80, 80), new Room(81, 81, 81, 91, 80), new Room(82, 82, 83, 92, 82), new Room(83, 83, 84, 93, 82), new Room(84, 74, 84, 84, 83), new Room(85, 75, 85, 95, 85), new Room(86, 76, 86, 96, 86), new Room(87, 77, 87, 97, 87), new Room(88, 78, 89, 98, 88), new Room(89, 79, 89, 89, 88),
-			new Room(90, 90, 91, 90, 90), new Room(91, 81, 92, 91, 90), new Room(92, 82, 92, 92, 91), new Room(93, 83, 94, 93, 93), new Room(94, 94, 95, 94, 93), new Room(95, 85, 95, 95, 94), new Room(96, 86, 97, 96, 96), new Room(97, 87, 98, 97, 96), new Room(98, 88, 99, 98, 97), new Room(99, 99, 99, 99, 98)
+			new Room(90, 90, 91, 90, 90), new Room(91, 81, 92, 91, 90), new Room(92, 82, 92, 92, 91), new Room(93, 83, 94, 93, 93), new Room(94, 94, 95, 94, 93), new Room(95, 85, 95, 95, 94), new Room(96, 86, 97, 96, 96), new Room(97, 87, 98, 97, 96), new Room(98, 88, 99, 98, 97), new Room(99, 56, 56, 56, 56)
 	};
 	
 	static Story story = new Story();
@@ -35,7 +35,9 @@ public class Main {
 	}
 	
 	public static void takePlayerInput() {	
+		if(currentRoom != 56) {
 		System.out.println("Enter: W, A, S, D");
+		}
 		String playerInput = scanner.nextLine();
 		moveRoom(playerInput);
 		
