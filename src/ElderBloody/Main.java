@@ -3,7 +3,12 @@ package ElderBloody;
 import java.util.Scanner;
 
 public class Main {
-	
+	Enemy titan = new Enemy(40, 10, 30, "titan");  
+        Enemy fallen = new Enemy(35, 10, 35, "fallen"); 
+        Enemy berserker = new Enemy(45, 5, 30, "berserker"); 
+        Enemy zoomstalker = new Enemy(30, 40, 10, "zoomstalker");
+        Enemy bossEnemy = new Enemy(50, 50, 50, "இந்திரன");
+        Player player = new Player(10,50,10, pName);
 	private static Scanner scanner = new Scanner(System.in);
 	
 	private static int currentRoom = 0;
@@ -27,6 +32,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Title.printTitle();
+		String pName = scanner.nextLine;
 		map[currentRoom].drawRoom();
 		story.introduction();
 		while(gameState == 0) {
