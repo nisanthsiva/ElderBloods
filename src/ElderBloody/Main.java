@@ -8,7 +8,7 @@ public class Main {
         Enemy berserker = new Enemy(45, 5, 30, "berserker"); 
         Enemy zoomstalker = new Enemy(30, 40, 10, "zoomstalker");
         Enemy bossEnemy = new Enemy(50, 50, 50, "இந்திரன");
-        Player player = new Player(10,50,10, pName);
+       
 	private static Scanner scanner = new Scanner(System.in);
 	
 	private static int currentRoom = 0;
@@ -32,7 +32,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		Title.printTitle();
-		String pName = scanner.nextLine;
+		System.out.println("What is your name hero?!");
+		
+		String pName = scanner.nextLine();
+		 Player player = new Player(10,50,10, pName);
 		map[currentRoom].drawRoom();
 		story.introduction();
 		while(gameState == 0) {
