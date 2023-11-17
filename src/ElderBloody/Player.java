@@ -1,18 +1,16 @@
-package ElderBloody; 
-
+package ElderBloody;
 public class Player {
-    private String name;
     private int health;
     private int damage;
+    private int speed;
+    private String pName;
 
-    public Player(String name, int health, int damage) {
-        this.name = name;
-        this.health = health;
+    public Player(int damage, int health, int speed, String pName) {
         this.damage = damage;
-    }
-
-    public String getName() {
-        return name;
+        this.speed = speed;
+        this.health = health;
+        this.pName = pName;
+        
     }
 
     public int getHealth() {
@@ -23,23 +21,59 @@ public class Player {
         return damage;
     }
 
-    protected void setHealth(int newHealth) {
-        if (newHealth < 0) {
-            health = 0;
-        } else {
-            health = newHealth;
+    public int getSpeed() {
+        return speed;
+    }
+        // Attack methods
+        public void shadowSlash(Enemy enemy) {
+        
+            int damageDealt = 10; 
+            System.out.println(pName +  " performs Shadow Slash on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            enemy.receiveDamage(damageDealt);
+  
         }
+
+        public void lionsClaw(Enemy enemy) {
+     
+            int damageDealt = 12; 
+            System.out.println(pName + " performs Lion's Claw on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            enemy.receiveDamage(damageDealt);
+    
+        }
+
+        public void slam(Enemy enemy) {
+        
+            int damageDealt = 15;
+            System.out.println(pName + " performs Slam on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            enemy.receiveDamage(damageDealt);
+           
+        }
+
+        public void chillingMist(Enemy enemy) {
+
+            int damageDealt = 18;
+       	 System.out.println(pName + " performs Chilling Mist on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            enemy.receiveDamage(damageDealt);
+           
+        }
+        
+        public void receiveDamage(int damageTaken) {
+            this.health -= damageTaken;
+             if (this.health < 0) {
+                this. health = 0; 
+             }
+             
+             System.out.println(pName + " received " + damageTaken + " damage!");
+             System.out.println(pName + "'s remaining health: " + health);
+         }
+
+		public String getName() {
+	
+			return pName;
+		}
+
+
+
     }
 
-    public void takeDamage(int damage) {
-        health -= damage;
-        if (health < 0) {
-            health = 0;
-        }
-    }
-
-    public boolean isAlive() {
-        return health > 0;
-    }
-}
 
