@@ -3,7 +3,10 @@ package ElderBloody;
 import java.util.Scanner;
 
 public class Main {
-	Enemy titan = new Enemy(40, 10, 30, "titan");  
+	
+//		Enemy[] enemies;
+	
+		Enemy titan = new Enemy(40, 10, 30, "titan");  
         Enemy fallen = new Enemy(35, 10, 35, "fallen"); 
         Enemy berserker = new Enemy(45, 5, 30, "berserker"); 
         Enemy zoomstalker = new Enemy(30, 40, 10, "zoomstalker");
@@ -14,6 +17,8 @@ public class Main {
 	private static int currentRoom = 0;
 	private static int gameState = 0;
 	
+	public static Player player;
+//	public static Inventory inventory;
 	
 	private static Room[] map = {
 			new Room(0, 0, 1, 10, 0), new Room(1, 1, 2, 11, 0), new Room(2, 2, 3, 12, 1), new Room(3, 3, 4, 3, 2), new Room(4, 4, 5, 14, 3), new Room(5, 5, 5, 15, 4), new Room(6, 6, 7, 16, 6), new Room(7, 7, 8, 7, 6), new Room(8, 8, 9, 18, 7), new Room(9, 9, 9, 19, 8), //
@@ -35,7 +40,8 @@ public class Main {
 		System.out.println("What is your name hero?!");
 		
 		String pName = scanner.nextLine();
-		 Player player = new Player(10,50,10, pName);
+		player = new Player(10,50,10, pName);
+//		inventory = new Inventory();
 		map[currentRoom].drawRoom();
 		story.introduction();
 		while(gameState == 0) {
@@ -47,6 +53,7 @@ public class Main {
 		if(currentRoom != 56) {
 		System.out.println("Enter: W, A, S, D");
 		}
+		System.out.println("Press 'I' to access inventory");
 		String playerInput = scanner.nextLine();
 		moveRoom(playerInput);
 		
@@ -54,6 +61,25 @@ public class Main {
 		
 		story.storyline();
 		System.out.println("Room " + currentRoom);
+		
+		if(playerInput.equals("I")) {
+			// access inventory
+			System.out.println("Press 'U' to use an item.");
+			System.out.println("Press 'X' to drop an item.");
+			playerInput = scanner.nextLine();
+
+			if(playerInput.equals("U")) {
+				System.out.println("Which item slot would you like to use?");
+				int itemSlot = scanner.nextInt();
+				Inventory.useItem(itemSlot);
+			}
+			
+			if(playerInput.equals("X")) {
+				System.out.println("Which item slot would you like to drop?");
+				int itemSlot = scanner.nextInt();
+				Inventory.dropItem(itemSlot);
+			}
+		}
 	}
 	
 	public static void moveRoom(String playerInput) {

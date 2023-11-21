@@ -46,6 +46,7 @@ public class Story {
 			System.out.println("No materials here.");
 		} else if(Main.getCurrentRoom() == 17) {
 			System.out.println("Danger! A mob has spawned and wants to fight you! Use your new powers to defeat it!"); // Route 1
+			EnemyBattles.startTVBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 18) {
 			System.out.println("Woah! Lightning struck you and you and your sword have now obtained lightning powers!"); // Route 1
 		} else if(Main.getCurrentRoom() == 19) {
@@ -124,6 +125,7 @@ public class Story {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 56) {
 			System.out.println("Welcome to the boss room! Use all the items that you've received to fight the boss. There is no leaving rooms anymore.");
+			EnemyBattles.startBossBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 57) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 58) {
@@ -134,6 +136,7 @@ public class Story {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 61) {
 			System.out.println("Woah! You encountered an enemy. Fight them!"); // Route 2
+			EnemyBattles.startSRBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 62) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 63) {
@@ -146,16 +149,19 @@ public class Story {
 			System.out.println("The boss room is above! If you're ready, proceed."); // Route 2
 		} else if(Main.getCurrentRoom() == 67) {
 			System.out.println("Woah! An enemy is here! Fight them!"); // Route 2
+			EnemyBattles.startAOBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 68) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 69) {
 			System.out.println("");
 		} else if(Main.getCurrentRoom() == 70) {
 			System.out.println("Woah! You encountered an enemy. Fight them!");
+			EnemyBattles.startWRTBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 71) {
 			System.out.println("There's a health station here! Use it if needed."); // Route 2
 		} else if(Main.getCurrentRoom() == 72) {
 			System.out.println("Woah! You encountered an enemy. Fight them!"); // Route 2
+			EnemyBattles.startSRBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 73) {
 			System.out.println("You found a stone!"); // Route 2
 		} else if(Main.getCurrentRoom() == 74) {
@@ -164,6 +170,7 @@ public class Story {
 			System.out.println("There's a training station here. Train your attacks if needed."); // Route 2
 		} else if(Main.getCurrentRoom() == 76) {
 			System.out.println("Woah! There's an enemy here! Fight them!"); // Route 2
+			EnemyBattles.startAOBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 77) {
 			System.out.println("No materials here.");
 		} else if(Main.getCurrentRoom() == 78) {
@@ -200,12 +207,14 @@ public class Story {
 			System.out.println("You found a stick of metal! If you have a rock already, you can craft a sword!"); // Route 2
 		} else if(Main.getCurrentRoom() == 94) {
 			System.out.println("Woah! There's an enemy here! Fight them!"); // Route 2
+			EnemyBattles.startWRTBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 95) {
 			System.out.println("There's a healing station here, use if needed."); // Route 2
 		} else if(Main.getCurrentRoom() == 96) {
 			System.out.println("There's a healing station here, use if needed."); // Route 2
 		} else if(Main.getCurrentRoom() == 97) {
 			System.out.println("Woah! There's an enemy here! Fight them!"); // Route 2
+			EnemyBattles.startTVBattle(Main.player);
 		} else if(Main.getCurrentRoom() == 98) {
 			System.out.println("Warning, move up! If you go right, there may be consequences."); // Route 2
 		} else if(Main.getCurrentRoom() == 99) {

@@ -16,15 +16,29 @@ public class Player {
     public int getHealth() {
         return health;
     }
+    
+    public void setHealth(int health) {
+    	this.health = health;
+    }
 
     public int getDamage() {
         return damage;
+    }
+    
+    public void setDamage(int damage) {
+    	this.damage = damage;
     }
 
     public int getSpeed() {
         return speed;
     }
         // Attack methods
+    	public void meleeAttack(Enemy enemy) {
+    		int damageDealt = this.damage;
+    		System.out.println(pName +  " performs Shadow Slash on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+    		enemy.receiveDamage(damageDealt);
+    	}
+    
         public void shadowSlash(Enemy enemy) {
         
             int damageDealt = 10; 
