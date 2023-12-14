@@ -3,24 +3,15 @@ package ElderBloody;
 import java.util.Scanner;
 
 public class Main {
+      
+	static Scanner scanner = new Scanner(System.in);
 	
-//		Enemy[] enemies;
+	static int currentRoom = 0;
+	static int gameState = 0;
 	
-		Enemy titan = new Enemy(40, 10, 30, "titan");  
-        Enemy fallen = new Enemy(35, 10, 35, "fallen"); 
-        Enemy berserker = new Enemy(45, 5, 30, "berserker"); 
-        Enemy zoomstalker = new Enemy(30, 40, 10, "zoomstalker");
-        Enemy bossEnemy = new Enemy(50, 50, 50, "இந்திரன");
-       
-	private static Scanner scanner = new Scanner(System.in);
+	public static Player player; 
 	
-	private static int currentRoom = 0;
-	private static int gameState = 0;
-	
-	public static Player player;
-//	public static Inventory inventory;
-	
-	private static Room[] map = {
+	public static Room[] map = {
 			new Room(0, 0, 1, 10, 0), new Room(1, 1, 2, 11, 0), new Room(2, 2, 3, 12, 1), new Room(3, 3, 4, 3, 2), new Room(4, 4, 5, 14, 3), new Room(5, 5, 5, 15, 4), new Room(6, 6, 7, 16, 6), new Room(7, 7, 8, 7, 6), new Room(8, 8, 9, 18, 7), new Room(9, 9, 9, 19, 8), //
 			new Room(10, 0, 11, 20, 10), new Room(11, 1, 12, 21, 10), new Room(12, 2, 13, 12, 11), new Room(13, 13, 14, 23, 12), new Room(14, 4, 14, 24, 13), new Room(15, 5, 16, 15, 15), new Room(16, 6, 16, 16, 15), new Room(17, 17, 18, 27, 17), new Room(18, 8, 18, 18, 17), new Room(19, 9, 19, 29, 19), 
 			new Room(20, 10, 20, 30, 20), new Room(21, 11, 21, 31, 21), new Room(22, 22, 23, 32, 22), new Room(23, 13, 24, 33, 22), new Room(24, 14, 25, 34, 23), new Room(25, 25, 26, 25, 24), new Room(26, 26, 27, 36, 25), new Room(27, 17, 28, 37, 26), new Room(28, 28, 29, 28, 27), new Room(29, 19, 29, 39, 28),
@@ -35,32 +26,31 @@ public class Main {
 	
 	static Story story = new Story();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Title.printTitle();
-		System.out.println("What is your name hero?!");
-		
-		String pName = scanner.nextLine();
-		player = new Player(10,50,10, pName);
-//		inventory = new Inventory();
-		map[currentRoom].drawRoom();
-		story.introduction();
-		while(gameState == 0) {
+		System.out.println("What is your name hero?!"); // ask for name
+		String pName = scanner.nextLine(); // takes player input to get a name
+		player = new Player(10,100,pName); // Instanciation of player
+		map[currentRoom].drawRoom(); // takes the index of current room and draws that room and its exits
+		story.introduction(); // calls a method in story to introduce how to play the game
+		while(gameState == 0) { // takes user input until the game is beaten
 			takePlayerInput();
 		}
 	}
 	
-	public static void takePlayerInput() {	
-		if(currentRoom != 56) {
-		System.out.println("Enter: W, A, S, D");
+	public static void takePlayerInput() throws InterruptedException {	
+		if(currentRoom != 56) { // if current room isn't in the boss room
+		System.out.println("Enter: W, A, S, D"); // w for up, a for left, s for down, d for left
 		}
+		
 		System.out.println("Press 'I' to access inventory");
-		String playerInput = scanner.nextLine();
-		moveRoom(playerInput);
+		String playerInput = scanner.nextLine(); // main input player, this takes the input uses it as direction movement and also attack move selection
+		moveRoom(playerInput); // moves room in using depending on what the player types
 		
-		map[currentRoom].drawRoom();
+		map[currentRoom].drawRoom(); // takes the room at the current index and draws the room
 		
-		story.storyline();
-		System.out.println("Room " + currentRoom);
+		story.storyline(); // calls the storyline 
+		System.out.println("Room " + currentRoom); // tells the user what room they are in
 		
 		if(playerInput.equals("I")) {
 			// access inventory
@@ -71,36 +61,64 @@ public class Main {
 			if(playerInput.equals("U")) {
 				System.out.println("Which item slot would you like to use?");
 				int itemSlot = scanner.nextInt();
-				Inventory.useItem(itemSlot);
+				Inventory.useItem(itemSlot); // uses the item selected at the slot the user picked
 			}
 			
 			if(playerInput.equals("X")) {
 				System.out.println("Which item slot would you like to drop?");
 				int itemSlot = scanner.nextInt();
-				Inventory.dropItem(itemSlot);
+				Inventory.dropItem(itemSlot); // drops the item selected at the slot the user picked
 			}
 		}
-	}
+		}
+	
 	
 	public static void moveRoom(String playerInput) {
-		if(playerInput.equals("W")) {
+		// determines whether the play can go to the boss room other wise it won't let the play go in to the room
+		if(EnemyBattles.fallen.getAlreadyFought() == false || EnemyBattles.titan.getAlreadyFought() == false 
+		|| EnemyBattles.berserker.getAlreadyFought() == false || EnemyBattles.zoomstalker.getAlreadyFought() == false) { 
+			if(currentRoom == 46 && playerInput.equals("S")) {
+				System.out.println("You are not yet ready young warrior");
+				return; // ends the method call to stop player from moving room
+			}
+			else if(currentRoom == 66 && playerInput.equals("W")) {
+				System.out.println("You are not yet ready young warrior");
+				return; // ends the method call to stop player from moving room
+			}
+			else if(currentRoom == 57 && playerInput.equals("A")) {
+				System.out.println("You are not yet ready young warrior");
+				return; // ends the method call to stop player from moving room
+			}
+			else if(currentRoom == 55 && playerInput.equals("D")) {
+				System.out.println("You are not yet ready young warrior");
+				return; // ends the method call to stop player from moving room
+			}
+		}
+		
+		
+		
+		
+		if(playerInput.equals("W")) { // Player goes north if W is pressed
 			currentRoom = map[currentRoom].getRoomNorth();
 		}
-		else if(playerInput.equals("D")) {
-			currentRoom = map[currentRoom].getRoomEast();
+		else if(playerInput.equals("D")) { // Player goes west if D is pressed
+			currentRoom = map[currentRoom].getRoomEast();   
 		}
-		else if(playerInput.equals("S")) {
-			currentRoom = map[currentRoom].getRoomSouth();
+		else if(playerInput.equals("S")) { // Player goes south if S is pressed
+			currentRoom = map[currentRoom].getRoomSouth();  
 		}
-		else if(playerInput.equals("A")) {
-			currentRoom = map[currentRoom].getRoomWest();
+		else if(playerInput.equals("A")) { // Player goes east if A is pressed
+			currentRoom = map[currentRoom].getRoomWest();  
 		}
-		else {
+		else { // Otherwise, tell user invalid input
 			System.out.println("Invalid input");
 		}
+		
+		
 	}
 	
-	public static int getCurrentRoom() {
+	public static int getCurrentRoom() { // getter so it can be referenced in other classes
 		return currentRoom;
 	}
+	
 }
