@@ -2,11 +2,12 @@ package ElderBloody;
 
 public class Room {
 
-	private int roomNumber;
+	private int roomNumber; 
 	private int roomNorth;
 	private int roomEast;
 	private int roomSouth;
 	private int roomWest;
+	private boolean alreadyExplored = false; // important for things like 
 	
 	public Room(int roomNumber, int roomNorth, int roomEast, int roomSouth, int roomWest) {
 		this.roomNumber = roomNumber;
@@ -204,23 +205,31 @@ public class Room {
 	}
 	
 	public int getRoomNumber() {
-		return roomNumber;
+		return this.roomNumber;
 	}
 	
 	public int getRoomNorth() {
-		return roomNorth;
+		return this.roomNorth;
 	}
 	
 	public int getRoomEast() {
-		return roomEast;
+		return this.roomEast;
 	}
 	
 	public int getRoomSouth() {
-		return roomSouth;
+		return this.roomSouth;
 	}
 	
 	public int getRoomWest() {
-		return roomWest;
+		return this.roomWest;
+	}
+	
+	public boolean getRoomAlreadyExplored() {
+		return this.alreadyExplored;
+	}
+	
+	public void setRoomAlreadyExplored(boolean alreadyExplored) {
+		this.alreadyExplored = alreadyExplored;
 	}
 	
 }
