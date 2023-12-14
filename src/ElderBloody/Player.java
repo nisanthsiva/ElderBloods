@@ -1,16 +1,15 @@
 package ElderBloody;
-public class Player {
-    private int health;
-    private int damage;
-    private int speed;
+public class Player { 
+    private int health; // taken from enemy
+    private int damage; // this is a stat that changes everytime the player picks up an item
     private String pName;
-
-    public Player(int damage, int health, int speed, String pName) {
+    private int originalHealth; // same thing with enemy
+    
+    public Player(int damage, int health, String pName) {
         this.damage = damage;
-        this.speed = speed;
         this.health = health;
         this.pName = pName;
-        
+        this.originalHealth = health;
     }
 
     public int getHealth() {
@@ -29,27 +28,24 @@ public class Player {
     	this.damage = damage;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-        // Attack methods
-    	public void meleeAttack(Enemy enemy) {
-    		int damageDealt = this.damage;
-    		System.out.println(pName +  " performs Shadow Slash on " + enemy.getName() + " dealing " + damageDealt + " damage!");
-    		enemy.receiveDamage(damageDealt);
-    	}
+   // Attack methods
     
         public void shadowSlash(Enemy enemy) {
         
-            int damageDealt = 10; 
-            System.out.println(pName +  " performs Shadow Slash on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            int damageDealt = 10 + getDamage(); 
+            int healthAbsorbed = damageDealt / 2; 
+            System.out.println(this.getName() + " Takes " + enemy.getName() + ", soul dealing " + damageDealt + " damage and absorbing " + healthAbsorbed + " health!");
             enemy.receiveDamage(damageDealt);
+            this.health += healthAbsorbed;
+            if(this.health + healthAbsorbed > this.health) {
+            	this.health = this.originalHealth;
+            }
   
         }
 
         public void lionsClaw(Enemy enemy) {
      
-            int damageDealt = 12; 
+            int damageDealt = 12 + getDamage();
             System.out.println(pName + " performs Lion's Claw on " + enemy.getName() + " dealing " + damageDealt + " damage!");
             enemy.receiveDamage(damageDealt);
     
@@ -57,16 +53,16 @@ public class Player {
 
         public void slam(Enemy enemy) {
         
-            int damageDealt = 15;
+            int damageDealt = 15 + getDamage();
             System.out.println(pName + " performs Slam on " + enemy.getName() + " dealing " + damageDealt + " damage!");
             enemy.receiveDamage(damageDealt);
            
         }
 
-        public void chillingMist(Enemy enemy) {
+        public void lightningFury(Enemy enemy) {
 
-            int damageDealt = 18;
-       	 System.out.println(pName + " performs Chilling Mist on " + enemy.getName() + " dealing " + damageDealt + " damage!");
+            int damageDealt = 25 + getDamage();
+       	 System.out.println(pName + " slashes with a lighting strike on " + enemy.getName() + " dealing " + damageDealt + " damage!");
             enemy.receiveDamage(damageDealt);
            
         }
@@ -76,9 +72,6 @@ public class Player {
              if (this.health < 0) {
                 this. health = 0; 
              }
-             
-             System.out.println(pName + " received " + damageTaken + " damage!");
-             System.out.println(pName + "'s remaining health: " + health);
          }
 
 		public String getName() {
@@ -89,5 +82,3 @@ public class Player {
 
 
     }
-
-
