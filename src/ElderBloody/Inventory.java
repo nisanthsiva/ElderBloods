@@ -4,12 +4,25 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-//	private static Item[] items = new Item[10];
 	private static ArrayList<Item> items = new ArrayList<Item>();
 	private static int maxInventorySize = 10;
 	
 	public Inventory() {
 
+	}
+	
+	public static void displayInventory() {
+		if(items.size() <= 0) {
+			System.out.println("[Inventory is Empty!]");
+		}
+		else {
+			int slotNum = 0;
+			for(Item item : items) {
+				System.out.print("[" + slotNum + ": ");
+				System.out.print(item.itemName);
+				System.out.println("]");
+			}
+		}
 	}
 
 	public static void addItem(Item item) {
@@ -22,11 +35,21 @@ public class Inventory {
 	}
 	
 	public static void useItem(int slot) {
-		items.get(slot).useItem();
+		try {
+			items.get(slot).useItem();
+		}
+		catch (IndexOutOfBoundsException e) {
+			System.out.println("Invalid input. No item at that slot");
+		}
 	}
 	
 	public static void dropItem(int slot) {
-		items.remove(slot);
+		try {
+			items.remove(slot);
+		}
+		catch (IndexOutOfBoundsException e) {
+			System.out.println("Invalid input. No item at that slot");
+		}
 	}
 	
 }
