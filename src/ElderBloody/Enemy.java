@@ -1,47 +1,46 @@
 package ElderBloody;
 
 public class Enemy {
-    int damage;
-    int speed;
-    int health;
-    int originalHealth;
-    String name;
+    private int health; // health
+    private int originalHealth; // this is used a reference because the other health changes
+    private String name;
+    boolean alreadyFought;
     
-    public Enemy(int damage, int speed, int health, String name) {
-        this.damage = damage;
-        this.speed = speed;
+    public Enemy( int health, String name, boolean alreadyFought) {
         this.health = health;
         this.name = name;
         this.originalHealth = health;
+        this.alreadyFought = alreadyFought;
     }
     
-    public int getDamage() {
-        return damage;
+
+  
+    public String getName() { // getter
+        return name; 
+    }
+    public boolean getAlreadyFought() { // getter determines if the emeny has been fought
+    	return alreadyFought;
+    }
+    public void setAlreadyFought(boolean alreadyFought) { //setter changes the room status to true or false if true the enemy has been defeated
+    	this.alreadyFought = alreadyFought;
     }
     
-    public int getSpeed() {
-        return speed;
-    }
-    public String getName() {
-        return name;
-    }
-    
-    public void receiveDamage(int damageTaken) {
-       this.health -= damageTaken;
-        if (this.health < 0) {
-           this. health = 0; 
-        }
+    public void receiveDamage(int damageTaken) { // damage calculations takes damage as a parameter
+       this.health -= damageTaken; // takes the enemy health and substracts damage
+        if (this.health < 0) { // will only take damage if it has hp
+           this. health = 0; // keeps hp at zero
+        } 
         
-        System.out.println(name + " received " + damageTaken + " damage!");
+        System.out.println(name + " received " + damageTaken + " damage!"); // informs the user
         System.out.println(name + "'s remaining health: " + health);
     }
-    public void chillingMist(Player player) {
-        int damageDealt = 18;
+    public void chillingMist(Player player) { // damage move takes player as a parameter
+        int damageDealt = 18; // sets a damage value
       
 
         System.out.println(this.name  + " performs Chilling Mist on " + player.getName() + " dealing " + damageDealt + " damage and slowing them down!");
 
-        player.receiveDamage(damageDealt);
+        player.receiveDamage(damageDealt); // gives the number as a parameter to a player function which calculates damage
     
     }
 
@@ -74,29 +73,29 @@ public class Enemy {
     
     public void performRandomAttack(Player player) {
    
-        int randomNumber = (int)(Math.random() * 5);
+        int randomNumber = (int)(Math.random() * 5); // chooses a random number between 1 and 4 only int numbers
 
-        if (randomNumber == 0) {
+        if (randomNumber == 0) { // if random number is 0
             chillingMist(player);
         }  
-        else if (randomNumber == 1) {
+        else if (randomNumber == 1) { // if random number is 2
             electrifyingSurge(player);
         } 
-        else if (randomNumber == 2) {
+        else if (randomNumber == 2) { // if random number is 2
             soulDevourer(player);
         } 
-        else if (randomNumber == 3) {
+        else if (randomNumber == 3) { // if random number is 3
             tidalWave(player);
         } 
         
-        else {
-            System.out.println("The enemy hesitates and does nothing!");
+        else { // if random number is 4
+            System.out.println("The enemy hesitates and does nothing!"); 
         }
     }
 
     
 
-	public int getHealth() {
+	public int getHealth() { // getter, important for determining if enemy is alive and what the hp is
 		
 		return health;
 	}
