@@ -1,56 +1,65 @@
 package ElderBloody;
-import java.util.Scanner;
+
 
 public class EnemyBattles {
 	
-	private static Scanner scanner;
+		// intializes all the enemy
+		public static Enemy titan = new Enemy(30, "Titan Vanguard",false); 
+		public static Enemy fallen = new Enemy(35, "Sentinel Revenant",false);
+		public static Enemy zoomstalker = new Enemy(10, "Windrunner Titan",false);
+		public static  Enemy berserker = new Enemy(30, "Ashen Overlord",false);
+		public static  Enemy bossEnemy = new Enemy(50, "இந்திரன",false);
 
-
-	public EnemyBattles(Scanner scanner)
-	  {
-		  EnemyBattles.scanner = scanner;
-		  
-	  }
-    public static void startTVBattle(Player player) {
+    public static void startTVBattle(Player player) throws InterruptedException {
     	 
-    	Enemy titan = new Enemy(40, 10, 30, "Titan Vanguard");  
+    	 
      
-      
-    	System.out.println("In the vast expanse of the forbidden land, you encounter an ancient being – the Titan.");
+
+    	System.out.println("In the vast expanse of the forbidden land, you encounter an ancient being – the Titan."); // lore
     	
         System.out.println("The ground trembles beneath its colossal footsteps, and the air thickens with an eerie silence.\n");
     
 
        
-        while (player.getHealth() > 0 && titan.getHealth() > 0) {
-            System.out.println(titan.getName() + " has " + titan.getHealth() + " health remaining");
-            System.out.println("1:Fight\t 2:Bag\t 3:Run");
-            int num = scanner.nextInt();
-
-            PlayerChoice.playerChoice(num, titan, player, scanner);
+        while (player.getHealth() > 0 && titan.getHealth() > 0) { // if the user and the enemy both have remaining hp
+            System.out.println(titan.getName() + " has " + titan.getHealth() + " health remaining"); // tells the user the hp levels
+           System.out.println("1:Fight\t 2:Bag\t 3:Run");
+            String input = Main.scanner.nextLine(); // takes user input
+            for(int i =0; i < 50; i++) {
+            System.out.println(); //  cleans the console up by adding blank space
+            }
+            PlayerChoice.playerChoice(input, titan, player, Main.scanner); // takes the input and decides what to do with it to which enemy
+            
+      
         }
+        	titan.alreadyFought = true; // means the enemy has been defeated
+      
     }
     
-    public static void startSRBattle(Player player) {
-   	 
-    	  Enemy fallen = new Enemy(35, 10, 35, "Sentinel Revenant");
+    public static void startSRBattle(Player player) throws InterruptedException {
+   	  
+    	
      
-    	  System.out.println("The Sentinel Revenant manifests, an enigmatic entity dancing amidst the shadows.");
+    	  System.out.println("The Sentinel Revenant manifests, an enigmatic entity dancing amidst the shadows."); 
     	    System.out.println("Its presence flickers, a specter that defies the laws of space and time.\n");
 
        
         while (player.getHealth() > 0 && fallen.getHealth() > 0) {
             System.out.println(fallen.getName() + " has " + fallen.getHealth() + " health remaining");
             System.out.println("1:Fight\t 2:Bag\t 3:Run");
-            int num = scanner.nextInt();
-
-            PlayerChoice.playerChoice(num, fallen, player, scanner);
+            String input = Main.scanner.nextLine();
+            for(int i =0; i < 50; i++) {
+                System.out.println();
+                }
+            PlayerChoice.playerChoice(input, fallen, player, Main.scanner);
+            
         }
+        fallen.alreadyFought = true;
     }
     
-    public static void startWRTBattle(Player player) {
+    public static void startWRTBattle(Player player) throws InterruptedException {
     	
-    	 Enemy zoomstalker = new Enemy(30, 40, 10, "Windrunner Titan");
+    
 
     	 	System.out.println("...");
 
@@ -58,16 +67,19 @@ public class EnemyBattles {
       while (player.getHealth() > 0 && zoomstalker.getHealth() > 0) {
           System.out.println(zoomstalker.getName() + " has " + zoomstalker.getHealth() + " health remaining");
           System.out.println("1:Fight\t 2:Bag\t 3:Run");
-          int num = scanner.nextInt();
-
-          PlayerChoice.playerChoice(num, zoomstalker, player, scanner);
+          String input = Main.scanner.nextLine();
+          for(int i =0; i < 50; i++) {
+              System.out.println();
+              }
+          PlayerChoice.playerChoice(input, zoomstalker, player, Main.scanner);
+          
       }
+      zoomstalker.alreadyFought = true;
   }
     
-    public static void startAOBattle(Player player) {
+    public static void startAOBattle(Player player) throws InterruptedException {
       	 
-      Enemy berserker = new Enemy(45, 5, 30, "Ashen Overlord");
-   
+ 
       
     
       System.out.println("You've faced the Titan Vanguard, unwavering in strength, the First of the Titans,");
@@ -89,29 +101,34 @@ public class EnemyBattles {
       while (player.getHealth() > 0 && berserker.getHealth() > 0) {
           System.out.println(berserker.getName() + " has " + berserker.getHealth() + " health remaining");
           System.out.println("1:Fight\t 2:Bag\t 3:Run");
-          int num = scanner.nextInt();
-
-         PlayerChoice.playerChoice(num, berserker, player, scanner);
+          String input = Main.scanner.nextLine();
+          PlayerChoice.playerChoice(input, berserker, player, Main.scanner);
+          
       }
+      berserker.alreadyFought = true;
     }
   
     
-    public static void startBossBattle(Player player) {
-        Enemy bossEnemy = new Enemy(50, 50, 50, "இந்திரன");
+    public static void startBossBattle(Player player) throws InterruptedException {
+      
 
         System.out.println("Prepare to face a formidable opponent: " + bossEnemy.getName());
         System.out.println("You believe yourself ready for this challenge, " + player.getName() + "?");
-        String playerResponse = scanner.nextLine();
+        String playerResponse = Main.scanner.nextLine();
         System.out.println(playerResponse);
         System.out.println("Bravery will be tested against overwhelming strength. Let the clash begin!");
 
         while (player.getHealth() > 0 && bossEnemy.getHealth() > 0) {
             System.out.println(bossEnemy.getName() + " currently has " + bossEnemy.getHealth() + " health.");
             System.out.println("Choose your action: 1:Fight  2:Bag  3:Run");
-            int num = scanner.nextInt();
-
-            PlayerChoice.playerChoice(num, bossEnemy, player, scanner);
+            String input = Main.scanner.nextLine();
+            for(int i =0; i < 50; i++) {
+                System.out.println();
+                }
+            PlayerChoice.playerChoice(input, bossEnemy, player, Main.scanner);
+            
         }
+        bossEnemy.alreadyFought = true;
     }
 
   
