@@ -13,7 +13,7 @@ package ElderBloody;
 
 public class EnemyBattles {
 	
-		// Intializes all the enemies.
+		// Instantiates all the enemies.
 		public static Enemy titan = new Enemy(30, "Titan Vanguard",false); 
 		public static Enemy fallen = new Enemy(35, "Sentinel Revenant",false);
 		public static Enemy zoomstalker = new Enemy(10, "Windrunner Titan",false);
