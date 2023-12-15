@@ -203,7 +203,8 @@ public class Room {
 		}
 	}
 
-	public int getRoomNumber() { // Functions that return rooms.
+	// Getters and setters
+	public int getRoomNumber() {
 		return this.roomNumber;
 	}
 
