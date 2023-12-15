@@ -14,7 +14,6 @@ public class Item {
 
 	String itemName;
 	int multiplier; // Damage or healing (weapon vs consumable)
-	int durability;
 	String type; // weapon or consumable (healing)
 
 	public Item(String itemName, int multiplier, String type) { // Constructor.
