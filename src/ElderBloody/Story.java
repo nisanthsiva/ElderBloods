@@ -12,14 +12,14 @@ package ElderBloody;
 
 public class Story {
 
-	void introduction() { // introduces how to move and what the room look like and for example a room
+	static void introduction() { // introduces how to move and what the room look like and for example a room
 							// with a exit North will have the top line be empty indicating that you can
 							// move through it
 		System.out.println("Welcome to the first room! Write 'D' to move through the exit on the right.");
 		System.out.println("Later on in the game, you write 'W', 'A', 'S', 'D', to move through exits of your choice.");
 	}
 
-	void storyline() throws InterruptedException {
+	static void storyline() throws InterruptedException {
 		if (Main.getCurrentRoom() == 0) { // if room is 0 its the first room teaching you how to move
 			System.out.println("Start the game by writing 'D'.");
 		} else if (Main.getCurrentRoom() == 1) { // if room is 1 you can see exits
